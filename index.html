@@ -1,1 +1,51 @@
-Take Over By x3r0x v1p3r
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Index Page</h1>
+        <p>This is a dynamic HTML page generated using Python.</p>
+        <p>Current date and time: <span id="datetime"></span></p>
+    </div>
+    <script>
+        // Get the current date and time
+        function getCurrentDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            return now.toLocaleString('en-US', options);
+        }
+
+        // Update the datetime span
+        function updateDateTime() {
+            const datetimeSpan = document.getElementById('datetime');
+            datetimeSpan.textContent = getCurrentDateTime();
+        }
+
+        // Update datetime every second
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
